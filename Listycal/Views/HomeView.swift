@@ -50,6 +50,7 @@ struct HomeView: View {
                         HStack(spacing: 8) {
                             Text("Spaces")
                                 .font(.headline)
+                            Spacer()
                             Menu {
                                 ForEach(LayoutMode.allCases) { mode in
                                     Button {
@@ -65,6 +66,7 @@ struct HomeView: View {
                                     .contentTransition(.symbolEffect(.replace))
                                     .font(.system(size: 15, weight: .medium))
                                     .foregroundColor(.primary)
+                                    .frame(width: 44, height: 44)
                             }
                             .accessibilityLabel("Change layout")
                             .accessibilityValue(layoutMode.rawValue)
