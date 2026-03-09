@@ -1,2 +1,2 @@
 # Listycal
-Expirementing with thangs
+Experimenting with iOS thangs
