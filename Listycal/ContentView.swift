@@ -2,7 +2,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var selectedTab: Int = 0
+    @State private var selectedTab: Int = 1
     @State private var scrollToTopTab1: Int = 0
     @State private var scrollToTopTab2: Int = 0
 
