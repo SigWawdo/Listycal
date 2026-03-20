@@ -9,6 +9,7 @@ struct CustomTabBar: View {
             HStack(spacing: 0) {
                 TabBarButton(icon: "diamond.fill", label: "Spaces", index: 0, selectedTab: $selectedTab, onDoubleTap: onDoubleTap)
                 TabBarButton(icon: "circle.fill", label: "Spaces", index: 1, selectedTab: $selectedTab, onDoubleTap: onDoubleTap)
+                TabBarButton(icon: "square.fill", label: "Dashboard", index: 2, selectedTab: $selectedTab, onDoubleTap: onDoubleTap)
             }
             .padding(4)
             .background(.regularMaterial, in: Capsule())
