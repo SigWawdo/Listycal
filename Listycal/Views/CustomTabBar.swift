@@ -10,8 +10,9 @@ struct CustomTabBar: View {
                 TabBarButton(icon: "diamond.fill", label: "Spaces", index: 0, selectedTab: $selectedTab, onDoubleTap: onDoubleTap)
                 TabBarButton(icon: "circle.fill", label: "Spaces", index: 1, selectedTab: $selectedTab, onDoubleTap: onDoubleTap)
                 TabBarButton(icon: "square.fill", label: "Dashboard", index: 2, selectedTab: $selectedTab, onDoubleTap: onDoubleTap)
+                TabBarButton(icon: "triangle.fill", label: "Home", index: 3, selectedTab: $selectedTab, onDoubleTap: onDoubleTap)
             }
-            .padding(4)
+            .padding(6)
             .background(.regularMaterial, in: Capsule())
             .shadow(color: .black.opacity(0.08), radius: 10, x: 0, y: 4)
 
@@ -19,15 +20,15 @@ struct CustomTabBar: View {
 
             Button {} label: {
                 Image(systemName: "magnifyingglass")
-                    .font(.system(size: 17, weight: .medium))
+                    .font(.system(size: 18, weight: .medium))
                     .foregroundColor(.primary)
-                    .frame(width: 50, height: 50)
+                    .frame(width: 54, height: 54)
                     .background(.regularMaterial, in: Circle())
                     .shadow(color: .black.opacity(0.08), radius: 10, x: 0, y: 4)
             }
             .accessibilityLabel("Search")
         }
-        .padding(.horizontal, 20)
+        .padding(.horizontal, 16)
         .padding(.bottom, 36)
     }
 }
@@ -42,16 +43,19 @@ struct TabBarButton: View {
     var isSelected: Bool { selectedTab == index }
 
     var body: some View {
-        VStack(spacing: 3) {
+        VStack(spacing: 4) {
             Image(systemName: icon)
-                .font(.system(size: 16))
+                .font(.system(size: 18))
+                .frame(width: 24, height: 22)
                 .foregroundColor(isSelected ? .blue : .secondary)
             Text(label)
-                .font(.system(size: 10, weight: .medium))
+                .font(.system(size: 11, weight: .medium))
                 .foregroundColor(isSelected ? .blue : .secondary)
+                .lineLimit(1)
+                .fixedSize()
         }
-        .padding(.horizontal, 20)
-        .padding(.vertical, 9)
+        .padding(.horizontal, 14)
+        .padding(.vertical, 10)
         .background(isSelected ? Color.blue.opacity(0.1) : Color.clear, in: Capsule())
         .accessibilityElement(children: .ignore)
         .accessibilityLabel("\(label) tab")

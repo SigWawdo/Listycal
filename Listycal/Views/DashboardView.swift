@@ -118,6 +118,10 @@ struct DashboardView: View {
     }
 }
 
+#Preview {
+    DashboardView(scrollToTop: .constant(0))
+}
+
 // MARK: - Upcoming Card
 
 private struct UpcomingCard: View {

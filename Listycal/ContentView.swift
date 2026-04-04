@@ -2,10 +2,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var selectedTab: Int = 1
+    @State private var selectedTab: Int = 3
     @State private var scrollToTopTab1: Int = 0
     @State private var scrollToTopTab2: Int = 0
     @State private var scrollToTopTab3: Int = 0
+    @State private var scrollToTopTab4: Int = 0
 
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -15,6 +16,8 @@ struct ContentView: View {
                     SpacesView(scrollToTop: $scrollToTopTab1)
                 case 2:
                     DashboardView(scrollToTop: $scrollToTopTab3)
+                case 3:
+                    DummyView(scrollToTop: $scrollToTopTab4)
                 default:
                     HomeView(scrollToTop: $scrollToTopTab2)
                 }
@@ -25,6 +28,7 @@ struct ContentView: View {
                 switch tappedTab {
                 case 0: scrollToTopTab1 += 1
                 case 2: scrollToTopTab3 += 1
+                case 3: scrollToTopTab4 += 1
                 default: scrollToTopTab2 += 1
                 }
             }

@@ -17,13 +17,13 @@ struct SpacesView: View {
                             .font(.subheadline)
                             .foregroundColor(.secondary)
                             .padding(.horizontal, 16)
-                            .padding(.bottom, 16)
+                            .padding(.bottom, 110)
 
                         SpaceCardGrid(spaces: spaces, layoutMode: layoutMode, namespace: cardNamespace)
                             .padding(.horizontal, 16)
                     }
                     .padding(.top, 8)
-                    .padding(.bottom, 110)
+                    .padding(.bottom, 16)
                 }
                 .onChange(of: scrollToTop) {
                     withAnimation(.spring(response: 0.9, dampingFraction: 0.75)) {
